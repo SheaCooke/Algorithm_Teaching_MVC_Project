@@ -1,0 +1,24 @@
+﻿@using AlgorithmsWebApp.Models;
+
+@model AlgorithmModels;
+
+
+<div>
+    <form method="post" asp-action="AlgorithmSelected" asp-controller="UserInput">
+
+       
+        <select required asp-for="SelectedAlgorithm">
+            <option value="" disabled selected>--Select--</option>
+            @foreach(var item in @Model.AlgorithmList)
+            {
+            <option value="@item.Text">@item.Text</option>
+            }
+        </select>
+
+
+        <input type="submit" value="Run" />
+    </form>
+</div>
+
+
+
