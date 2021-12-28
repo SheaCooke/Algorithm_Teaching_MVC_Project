@@ -18,7 +18,7 @@ namespace AlgorithmsWebApp.Models
         };
 
         
-        public int[] Collection { get; set; }
+        public string Collection { get; set; }
 
         public int TargetValue { get; set; }
     }

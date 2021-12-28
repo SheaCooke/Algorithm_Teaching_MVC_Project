@@ -29,11 +29,15 @@ namespace AlgorithmsWebApp.Controllers
         [HttpPost]
         public IActionResult GenerateResponse(AlgorithmModels am)
         {
+            //call parseCollection with am.collection, pass that new value into the algos 
+
             
+
+
             //call RunAlgoBasedOnName, store in AlgoOutput var
             var AlgoOutput = am.SelectedAlgorithm switch
             {
-                AlgorithmSelection.BinarySearch => Algorithms.BinarySearch(am.Collection, am.TargetValue),
+                AlgorithmSelection.BinarySearch => Algorithms.BinarySearch(Algorithms.ParseCollectionToArray(am.Collection), am.TargetValue),
                 _ => 0
             };
 

@@ -3,10 +3,50 @@
     public class Algorithms
     {
         
+        //ParseCollectionToArray, turn comma separated values into an array
+        public static int[] ParseCollectionToArray(string collection)
+        {
+            collection = collection.Trim();
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < collection.Length; i++)
+            {
+                if (collection[i] != ',')
+                {
+                    try
+                    {
+                        result.Add(Int32.Parse(collection[i].ToString()));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Error "+e);
+                    }
+                }
+
+            }
+
+            return result.ToArray();
+
+            /*string[] array = collection.Split(",");
+
+            int[] result = new int[array.Length];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = Int32.Parse(array[i]);
+            }
+
+            return result;*/
+        }
 
         public static int BinarySearch(int[] collection, int target)//returns the index of the specified element
         {
-            int index = 1;
+            int index = 0;
+
+            foreach (var i in collection)
+            {
+                index += i;
+            }
 
             return index;
         }
