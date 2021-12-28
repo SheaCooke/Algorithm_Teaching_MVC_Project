@@ -1,5 +1,5 @@
 ﻿@using AlgorithmsWebApp.Models;
-
+@using AlgorithmsWebApp.Data;
 @model AlgorithmModels;
 
 
@@ -18,6 +18,17 @@
 
         <input type="submit" value="Run" />
     </form>
+
+       @foreach (var i in ResultsDisplayedToUser.ResultsFromSession) //make into blocks with the users input followed by the a brief description and then the output 
+            {
+                <hr class="dashed">
+                <p>@i.ReturnedValue</p>
+                <p>@i.Explanation</p>
+                <p>@i.LinkToDocumentation</p>
+
+
+            }
+
 </div>
 
 

@@ -1,5 +1,7 @@
 ﻿@model AlgorithmModels;
 
+
+
 <h1>AlgorithmSelected</h1>
 
 <p>@Model.SelectedAlgorithm</p>
@@ -9,9 +11,9 @@
     <form method="post" asp-action="GenerateResponse" asp-controller="UserInput">
 
           <label for="valueToFind">Value To Find:</label>
-          <input type="text" id="valueToFind"><br><br>
+          <input type="text" id="valueToFind" asp-for="TargetValue"><br><br>
           <label for="collectionOfValues">Collection Of Values</label>
-          <input type="text" id="collectionOfValues"><br><br>
+          <input type="text" id="collectionOfValues" asp-for="Collection"><br><br>
 
           <input type="submit" value="Run" />
     </form>
@@ -20,3 +22,4 @@ else
 {
     <p1>Not working</p1>
 }
+

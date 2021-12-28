@@ -16,5 +16,10 @@ namespace AlgorithmsWebApp.Models
         {
             new SelectListItem(AlgorithmSelection.BinarySearch.ToString(), ((int)AlgorithmSelection.BinarySearch).ToString())
         };
+
+        
+        public int[] Collection { get; set; }
+
+        public int TargetValue { get; set; }
     }
 }
