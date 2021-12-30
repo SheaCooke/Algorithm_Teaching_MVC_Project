@@ -10,7 +10,12 @@
       "ProjectGuid": "fb649f06-2e2c-4313-b8e2-7e0c2a12e288",
       "DisplayName": "AlgorithmsWebAppTest",
       "ColorIndex": 1
+    },
+    "d528f734-f686-48cc-ae1f-4b439a870595": {
+      "ProjectGuid": "d528f734-f686-48cc-ae1f-4b439a870595",
+      "DisplayName": "AlgorithmsWebAppTests",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

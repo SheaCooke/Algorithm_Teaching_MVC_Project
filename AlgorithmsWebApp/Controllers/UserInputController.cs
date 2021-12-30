@@ -35,7 +35,7 @@ namespace AlgorithmsWebApp.Controllers
            
             var AlgoOutput = am.SelectedAlgorithm switch
             {
-                AlgorithmSelection.BinarySearch => Algorithms.BinarySearch(Algorithms.ParseCollectionToArray(am.Collection), am.TargetValue),
+                AlgorithmSelection.BinarySearch => Algorithms.BinarySearch(Algorithms.ParseToIntArray(am.Collection), am.TargetValue),
                 _ => 0
             };
 
