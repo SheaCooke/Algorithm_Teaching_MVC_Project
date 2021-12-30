@@ -23,11 +23,19 @@
             {
                 <hr class="dashed">
                 <p>@i.ReturnedValue</p>
+                <p>Description of the @Model.SelectedAlgorithm algorithm:</P>
                 <p>@i.Explanation</p>
+                <p>Link to documentation:</P>
                 <p>@i.LinkToDocumentation</p>
 
 
             }
+
+       @* @foreach (var i in ResultsDisplayedToUser.TextToUserDictionary)
+        {
+            <p>@i.Key</p>
+            <p>@i.Value</p>
+        }*@
 
 </div>
 

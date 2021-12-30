@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AlgorithmsWebApp.Models;
 using AlgorithmsWebApp.Data;
+using Newtonsoft.Json;
+using System.IO;
+
 
 namespace AlgorithmsWebApp.Controllers
 {
@@ -43,9 +46,37 @@ namespace AlgorithmsWebApp.Controllers
 
             //call GetDescriptionAndLink, returns tuple of strings, store in (string,string) text
 
+
+
+            /*var text = File.ReadLines("C:\\Users\\Shea Cooke\\Desktop\\AlgorithmWebApp\\AlgorithmsWebApp\\AlgorithmsWebApp\\AlgoInfo.txt")
+               .Select((v, i) => new {Index = i, Value = v})
+               .GroupBy(p => p.Index / 2)
+               .ToDictionary(g => g.First().Value, g => g.Last().Value);*/
+
+            
+
+            using (var sr = new StreamReader("AlgoInfo.txt"))
+            {
+                string line = null;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (!ResultsDisplayedToUser.TextToUserDictionary.ContainsKey(line))
+                    {
+                        ResultsDisplayedToUser.TextToUserDictionary.Add(line, sr.ReadLine());
+                    }
+                    
+                }
+            }
+
+           
+
+
+
+
             //new ResponseModel(AlgoOutput, text.1, text.2)
 
-            ResultsModel results = new ResultsModel(AlgoOutput.ToString(), "description", "link");
+            ResultsModel results = new ResultsModel(AlgoOutput.ToString(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchDescription"].Trim(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchLink"].Trim());
 
             //Add new ResponseModel to ResultsFromSession
 
