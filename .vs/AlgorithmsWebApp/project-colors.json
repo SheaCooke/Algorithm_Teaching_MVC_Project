@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "79f1a5d2-5a39-4c23-9994-51c865da0485": {
+      "ProjectGuid": "79f1a5d2-5a39-4c23-9994-51c865da0485",
+      "DisplayName": "AlgorithmsWebApp",
+      "ColorIndex": 0
+    },
+    "fb649f06-2e2c-4313-b8e2-7e0c2a12e288": {
+      "ProjectGuid": "fb649f06-2e2c-4313-b8e2-7e0c2a12e288",
+      "DisplayName": "AlgorithmsWebAppTest",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -27,16 +27,7 @@
 
             return result.ToArray();
 
-            /*string[] array = collection.Split(",");
-
-            int[] result = new int[array.Length];
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                result[i] = Int32.Parse(array[i]);
-            }
-
-            return result;*/
+           
         }
 
         public static int BinarySearch(int[] collection, int target)//returns the index of the specified element
