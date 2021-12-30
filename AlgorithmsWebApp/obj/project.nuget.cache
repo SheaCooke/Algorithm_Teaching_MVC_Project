@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oGs9Niwfx1X4gTAtiBen1NjLX1ICWBbdY5bRIXrZfGRppQ8mb5hawCfh3w+cO/7nNcXOgQreshYbWyWucYrlqg==",
+  "dgSpecHash": "EKg1wcORdiXNAiISM5cTk5hLtg5xguwE58cLdwilP9yS5mwqc9I0/TioBwgo75B8U7oWLUYlX5X470JeCXCL7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Shea Cooke\\Desktop\\AlgorithmWebApp\\AlgorithmsWebApp\\AlgorithmsWebApp\\AlgorithmsWebApp.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.net.stringtools\\1.0.0\\microsoft.net.stringtools.1.0.0.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.testplatform\\17.0.0\\microsoft.testplatform.17.0.0.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.1\\microsoft.visualstudio.web.codegeneration.6.0.1.nupkg.sha512",
     "C:\\Users\\Shea Cooke\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.1\\microsoft.visualstudio.web.codegeneration.core.6.0.1.nupkg.sha512",

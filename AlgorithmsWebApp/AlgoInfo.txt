@@ -1,4 +1,4 @@
 BinarySearchDescription
 description for binary search
 BinarySearchLink
-link to binary search docs
+https://en.wikipedia.org/wiki/Binary_search_algorithm
