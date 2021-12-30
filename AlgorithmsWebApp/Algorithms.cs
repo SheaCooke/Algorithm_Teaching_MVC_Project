@@ -72,7 +72,11 @@
         public static int BinarySearch(int[] collection, int target)//returns the index of the specified element, or -1
         {
             //check if array is sorted before preceeding 
-
+            if (!IsArraySortedAscending(collection))
+            {
+                Console.WriteLine("Collection must be sorted");
+                return -2;
+            }
 
             int left = 0;
             int right = collection.Length - 1;

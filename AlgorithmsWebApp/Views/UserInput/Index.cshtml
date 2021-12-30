@@ -22,7 +22,9 @@
        @foreach (var i in ResultsDisplayedToUser.ResultsFromSession) //make into blocks with the users input followed by the a brief description and then the output 
             {
                 <hr class="dashed">
-                <p>@i.ReturnedValue</p>
+                <p>@Model.SelectedAlgorithm</p>
+                <p>Input: @Model.Collection</p>
+                <p>Output: @i.ReturnedValue</p>
                 <p>Description of the @Model.SelectedAlgorithm algorithm:</P>
                 <p>@i.Explanation</p>
                 <p>Link to documentation:</P>

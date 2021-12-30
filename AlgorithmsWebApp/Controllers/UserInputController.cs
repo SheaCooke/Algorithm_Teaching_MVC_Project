@@ -9,6 +9,22 @@ namespace AlgorithmsWebApp.Controllers
 {
     public class UserInputController : Controller
     {
+        public UserInputController()
+        {
+            using (var sr = new StreamReader("AlgoInfo.txt"))
+            {
+                string line = null;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    if (!ResultsDisplayedToUser.TextToUserDictionary.ContainsKey(line))
+                    {
+                        ResultsDisplayedToUser.TextToUserDictionary.Add(line, sr.ReadLine());
+                    }
+
+                }
+            }
+        }
         public IActionResult Index()
         {
             var vm = new AlgorithmModels();
@@ -39,30 +55,15 @@ namespace AlgorithmsWebApp.Controllers
                 _ => 0
             };
 
-            
-
-            using (var sr = new StreamReader("AlgoInfo.txt"))
-            {
-                string line = null;
-
-                while ((line = sr.ReadLine()) != null)
-                {
-                    if (!ResultsDisplayedToUser.TextToUserDictionary.ContainsKey(line))
-                    {
-                        ResultsDisplayedToUser.TextToUserDictionary.Add(line, sr.ReadLine());
-                    }
-                    
-                }
-            }
-
        
-
             ResultsModel results = new ResultsModel(AlgoOutput.ToString(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchDescription"].Trim(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchLink"].Trim());
 
+            ResultsDisplayedToUser.ResultsFromSession.Clear();
 
             ResultsDisplayedToUser.ResultsFromSession.Add(results);
 
-            return Redirect("Index");
+            
+            return View("index", am);
         }
 
 

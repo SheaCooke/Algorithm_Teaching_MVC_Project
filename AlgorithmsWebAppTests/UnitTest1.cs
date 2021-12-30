@@ -32,6 +32,12 @@ namespace AlgorithmsWebAppTests
         }
 
         [TestMethod]
+        public void BinarySearchReturnsNegTwoIfUnsortedCollection()
+        {
+            Assert.AreEqual(-2, AlgorithmsWebApp.Algorithms.BinarySearch(_unSortedIntArray, 2));
+        }
+
+        [TestMethod]
         public void IsArraySortedAscendingReturnsTrueForSorted()
         {
             Assert.AreEqual(true, AlgorithmsWebApp.Algorithms.IsArraySortedAscending(_sortedIntArray));
