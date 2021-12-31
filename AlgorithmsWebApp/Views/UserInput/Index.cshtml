@@ -19,16 +19,16 @@
         <input type="submit" value="Run" />
     </form>
 
-       @foreach (var i in ResultsDisplayedToUser.ResultsFromSession) //make into blocks with the users input followed by the a brief description and then the output 
+       @for(int i = ResultsDisplayedToUser.ResultsFromSession.Count - 1; i >= 0; i--) 
             {
                 <hr class="dashed">
                 <p>@Model.SelectedAlgorithm</p>
-                <p>Input: @Model.Collection</p>
-                <p>Output: @i.ReturnedValue</p>
+                <p>Input: @ResultsDisplayedToUser.ResultsFromSession[i].Input</p>
+                <p>Output: @ResultsDisplayedToUser.ResultsFromSession[i].ReturnedValue</p>
                 <p>Description of the @Model.SelectedAlgorithm algorithm:</P>
-                <p>@i.Explanation</p>
+                <p>@ResultsDisplayedToUser.ResultsFromSession[i].Explanation</p>
                 <p>Link to documentation:</P>
-                <a href=@i.LinkToDocumentation target="_blank">Click Here</a>
+                <a href=@ResultsDisplayedToUser.ResultsFromSession[i].LinkToDocumentation target="_blank">Click Here</a>
 
 
             }
