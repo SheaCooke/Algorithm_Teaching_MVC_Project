@@ -18,19 +18,18 @@
 
         <input type="submit" value="Run" />
     </form>
-
-       @for(int i = ResultsDisplayedToUser.ResultsFromSession.Count - 1; i >= 0; i--) 
+    
+       @for(int i = ResultsDisplayedToUser.ResultsFromSession.Count - 1; i >= 0; i--) //iterate backwards to show most recent results first, avoid restructuring list each time
             {
                 <hr class="dashed">
                 <p>@Model.SelectedAlgorithm</p>
-                <p>Input: @ResultsDisplayedToUser.ResultsFromSession[i].Input</p>
+                <p>Input Value: @ResultsDisplayedToUser.ResultsFromSession[i].InputValue</p>
+                <p>Input Collection: @ResultsDisplayedToUser.ResultsFromSession[i].InputCollection</p>
                 <p>Output: @ResultsDisplayedToUser.ResultsFromSession[i].ReturnedValue</p>
                 <p>Description of the @Model.SelectedAlgorithm algorithm:</P>
                 <p>@ResultsDisplayedToUser.ResultsFromSession[i].Explanation</p>
                 <p>Link to documentation:</P>
                 <a href=@ResultsDisplayedToUser.ResultsFromSession[i].LinkToDocumentation target="_blank">Click Here</a>
-
-
             }
 
       

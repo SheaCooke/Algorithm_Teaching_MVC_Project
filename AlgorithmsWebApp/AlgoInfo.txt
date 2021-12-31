@@ -1,4 +1,9 @@
 BinarySearchDescription
-description for binary search
+Search a SORTED collection to return the index of a specified value. This is accomplished in linear time by initially starting with two pointers (one at each end of the collection), calculating a middle value for the collection, comparing that middle value to the value we are searching for, and then either changing the right pointer to be equal to the middle value (if that value is greater than the value we are searching for), or changing the left pointer to be equal to the middle value if the value at the middle index is greater than the one we are looking for. This process is continued, the collection is cut in half each time until the value at the middle index is the one we are searching for, or the value is not in the collection. In which case, -1 will be returned.
 BinarySearchLink
 https://en.wikipedia.org/wiki/Binary_search_algorithm
+InsertingSinglyLinkedListDescription
+description for inserting a node into a singly linked list, include info about the singly LL data structure. Start at the head, traverse up to, but not passing the insertion position, create next node, make that nodes next pointer point to the node in the next position. Finally, change the pointer of the node that was previously at that position to point to the newly inserted node.
+InsertingSinglyLinkedListLink
+https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+

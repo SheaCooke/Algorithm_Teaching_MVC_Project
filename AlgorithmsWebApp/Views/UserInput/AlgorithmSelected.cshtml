@@ -16,8 +16,24 @@
           <input type="text" id="collectionOfValues" asp-for="Collection"><br><br>
 
           <input type="submit" value="Run" />
+
     </form>
 }
+
+else if (@Model.SelectedAlgorithm.Equals(AlgorithmSelection.InsertingSinglyLinkedList))
+{
+    <form method="post" asp-action="GenerateResponse" asp-controller="UserInput">
+
+          <label for="valueToFind">Insertion Position:</label>
+          <input type="text" id="valueToFind" asp-for="TargetValue"><br><br>
+          <label for="collectionOfValues">Value of node to be inserted: </label>
+          <input type="text" id="collectionOfValues" asp-for="Collection"><br><br>
+
+          <input type="submit" value="Run" />
+
+    </form>
+}
+
 else
 {
     <p1>Not working</p1>

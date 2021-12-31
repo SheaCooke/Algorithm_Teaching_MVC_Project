@@ -52,9 +52,8 @@ namespace AlgorithmsWebApp.Controllers
             };
 
        
-            ResultsModel results = new ResultsModel(AlgoOutput.ToString(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchDescription"].Trim(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchLink"].Trim(), am.Collection);
+            ResultsModel results = new ResultsModel(AlgoOutput.ToString(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchDescription"].Trim(), ResultsDisplayedToUser.TextToUserDictionary["BinarySearchLink"].Trim(), am.Collection, am.TargetValue.ToString());
 
-            //ResultsDisplayedToUser.ResultsFromSession.Clear();
 
             ResultsDisplayedToUser.ResultsFromSession.Add(results);
 

@@ -14,7 +14,9 @@ namespace AlgorithmsWebApp.Models
         [Required(ErrorMessage = "Must select an algorithm.")]
         public List<SelectListItem> AlgorithmList = new List<SelectListItem>
         {
-            new SelectListItem(AlgorithmSelection.BinarySearch.ToString(), ((int)AlgorithmSelection.BinarySearch).ToString())
+            new SelectListItem(AlgorithmSelection.BinarySearch.ToString(), ((int)AlgorithmSelection.BinarySearch).ToString()),
+            new SelectListItem(AlgorithmSelection.InsertingSinglyLinkedList.ToString(), ((int)AlgorithmSelection.InsertingSinglyLinkedList).ToString())
+
         };
 
         

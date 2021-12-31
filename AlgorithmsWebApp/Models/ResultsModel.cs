@@ -8,14 +8,17 @@
 
         public string LinkToDocumentation { get; set; }
 
-        public string Input { get; set; }
+        public string InputCollection { get; set; }
 
-        public ResultsModel(string returnedValue, string explanation, string linkToDocumentation, string input)
+        public string InputValue { get; set; }
+
+        public ResultsModel(string returnedValue, string explanation, string linkToDocumentation, string inputCollection, string inputValue)
         {
             this.LinkToDocumentation = linkToDocumentation;
             this.ReturnedValue = returnedValue;
             this.Explanation = explanation;
-            this.Input = input;
+            this.InputCollection = inputCollection;
+            this.InputValue = inputValue;
         }
     }
 }
