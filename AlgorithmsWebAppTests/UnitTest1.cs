@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AlgorithmsWebApp.Models;
 
 namespace AlgorithmsWebAppTests
 {
@@ -62,6 +63,30 @@ namespace AlgorithmsWebAppTests
             Assert.AreEqual(false, AlgorithmsWebApp.Algorithms.IsArraySortedAscending(_unSortedDoubleArray));
         }
 
+
+       /* [TestMethod]
+        public void LinkedListAddLastContainsCorrectValues()
+        {
+       
+        }*/
+
+        [TestMethod]
+        public void LinkedListAddsNodes()
+        {
+            Node head = new Node("first value");
+
+            Node second = new Node("second value");
+
+            Node third = new Node("third value");
+
+            head.Next = second;
+
+            second.Next = third;
+
+            Assert.AreEqual("second value", head.Next.Data);
+            Assert.AreEqual("third value", head.Next.Next.Data);
+
+        }
 
 
 
