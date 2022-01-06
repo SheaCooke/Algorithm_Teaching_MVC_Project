@@ -14,12 +14,21 @@ namespace AlgorithmsWebAppTests
 
         private int[] _unSortedDoubleArray = new int[] { 1, 5, 3, 2, 4 };
 
+        Node head;
+        Node second;
+        Node third;
 
-        /* [TestInitialize]
-         private void initialize()
+
+        [TestInitialize]
+         public void initialize() //initialize and cleanup methods must be public 
          {
-             collection = new int[] { 1, 2, 3, 4, 5 };
-         }*/
+            head = new Node("first value");
+            second = new Node("second value");
+            third = new Node("third value");
+
+            head.Next = second;
+            second.Next = third;
+        }
 
 
 
@@ -64,38 +73,39 @@ namespace AlgorithmsWebAppTests
         }
 
 
-       /* [TestMethod]
-        public void LinkedListAddLastContainsCorrectValues()
-        {
-       
-        }*/
-
         [TestMethod]
         public void LinkedListAddsNodes()
         {
-            Node head = new Node("first value");
-
-            Node second = new Node("second value");
-
-            Node third = new Node("third value");
-
-            head.Next = second;
-
-            second.Next = third;
 
             Assert.AreEqual("second value", head.Next.Data);
             Assert.AreEqual("third value", head.Next.Next.Data);
 
         }
 
-
-
-
-
-        /*[TestCleanup]
-        private void CleanUp()
+        [TestMethod]
+        public void LinkedListInsertion()
         {
-            collection = null;
-        }*/
+         
+            Node ToBeInserted = new Node("inserted value");
+            AlgorithmsWebApp.Algorithms.LinkedListInsertion(1, ToBeInserted, head);
+
+            Assert.AreEqual("inserted value", head.Next.Data);
+
+            Node ToBeInserted2 = new Node("Second inserted value");
+            AlgorithmsWebApp.Algorithms.LinkedListInsertion(3, ToBeInserted2, head);
+
+            Assert.AreEqual("Second inserted value", head.Next.Next.Next.Data);
+
+
+        }
+
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            head = null;
+            second = null;
+            third = null;
+        }
     }
 }

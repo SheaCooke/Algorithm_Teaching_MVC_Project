@@ -1,4 +1,6 @@
-﻿namespace AlgorithmsWebApp
+﻿using AlgorithmsWebApp.Models;
+
+namespace AlgorithmsWebApp
 {
     public class Algorithms
     {
@@ -102,6 +104,27 @@
             }
 
             return -1;
+        }
+
+
+        public static void LinkedListInsertion(int insertionPosition, Node node, Node head) //1 = insert right after head
+        {
+            Node dummy = new Node(null, head);
+
+            Node left = dummy; //Because these objects (nodes) are reference types, they point or refer to a place in memory, so we can interact with the nodes (locations in memory) by creating more reference types
+            Node right = head;
+
+            while(right.Next != null && insertionPosition > 0)
+            {
+                right = right.Next;
+                left = left.Next;
+                insertionPosition--;
+            }
+
+            left.Next = node;
+
+            node.Next = right;
+
         }
 
     }
