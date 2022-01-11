@@ -115,6 +115,13 @@ namespace AlgorithmsWebAppTests
 
         }
 
+        [TestMethod]
+        public void RemoveNodeFromLinkedListRemovesCorrectNode()
+        { 
+            AlgorithmsWebApp.Algorithms.RemoveNodeFromLinkedList(head, 1);
+            Assert.AreEqual(head.Next.Data, "third value");
+        }
+
 
         [TestCleanup]
         public void CleanUp()

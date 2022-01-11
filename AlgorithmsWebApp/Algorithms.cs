@@ -127,6 +127,30 @@ namespace AlgorithmsWebApp
 
         }
 
+        public static void RemoveNodeFromLinkedList(Node head, int nodeToRemove)
+        {
+            if (head.Next == null)
+            {
+                return;
+            }
+
+            Node dummy = new Node(null, head);
+
+            Node left = dummy; //reference to the same object in memory
+            Node right = head;
+
+            while (right.Next != null && nodeToRemove > 0)
+            {
+                nodeToRemove--;
+                left = left.Next;
+                right = right.Next;
+            }
+            right = right.Next;
+
+            left.Next = right;
+
+        }
+
 
         public static Node CreateLinkedList(List<Node> listOfNodes)
         {
@@ -145,6 +169,8 @@ namespace AlgorithmsWebApp
 
             return listOfNodes[0];
         }
+
+
 
     }
 }
