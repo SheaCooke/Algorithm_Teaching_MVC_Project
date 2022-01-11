@@ -127,5 +127,24 @@ namespace AlgorithmsWebApp
 
         }
 
+
+        public static Node CreateLinkedList(List<Node> listOfNodes)
+        {
+            if (listOfNodes.Count <= 1)
+            {
+                return listOfNodes[0];
+            }
+
+            int right = 1;
+
+            for (int left = 0; left < listOfNodes.Count - 1; left++)
+            {
+                listOfNodes[left].Next = listOfNodes[right];
+                right++;
+            }
+
+            return listOfNodes[0];
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AlgorithmsWebApp.Models;
+using System.Collections.Generic;
 
 namespace AlgorithmsWebAppTests
 {
@@ -95,6 +96,21 @@ namespace AlgorithmsWebAppTests
             AlgorithmsWebApp.Algorithms.LinkedListInsertion(3, ToBeInserted2, head);
 
             Assert.AreEqual("Second inserted value", head.Next.Next.Next.Data);
+
+
+        }
+
+        [TestMethod]
+        public void CreateLinkedListConnectsNodes()
+        {
+            List<Node> nodes = new List<Node> { new Node("first", null), new Node("second", null), new Node("third", null) };
+
+            Node head = AlgorithmsWebApp.Algorithms.CreateLinkedList(nodes);
+
+            Assert.AreEqual(head.Data, "first");
+            Assert.AreEqual(head.Next.Data, "second");
+            Assert.AreEqual(head.Next.Next.Data, "third");
+            Assert.AreEqual(head.Next.Next.Next, null);
 
 
         }
