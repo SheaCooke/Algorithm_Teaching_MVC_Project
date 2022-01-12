@@ -171,6 +171,52 @@ namespace AlgorithmsWebApp
         }
 
 
+        public static void DoublyLinkedListInsertNode(int insertionPosition, DoublyLinkedNode node, DoublyLinkedNode head) //0 is before the head, 1 is immediately after
+        {
+            DoublyLinkedNode dummy = new DoublyLinkedNode(next:head);
+            DoublyLinkedNode left = dummy;
+            DoublyLinkedNode right = head;
+
+            while (right.Next != null & insertionPosition > 0)
+            {
+                left = left.Next;
+                right = right.Next;
+                insertionPosition--;
+            }
+
+            left.Next = node;
+            right.Previous = node;
+
+            node.Next = right;
+            node.Previous = left;
+
+            dummy = null;
+        }
+
+        public static void DoublyLinkedListRemoveNode(DoublyLinkedNode head, int position) //position 0 = head
+        {
+            DoublyLinkedNode dummy = new DoublyLinkedNode(next: head);
+            DoublyLinkedNode left = dummy;
+            DoublyLinkedNode right = head;
+
+            while (right.Next != null & position > 0)
+            {
+                left = left.Next;
+                right = right.Next;
+                position--;
+            }
+
+            right = right.Next;
+
+            right.Previous = left;
+            left.Next = right;
+
+            dummy = null;
+
+
+        }
+
+
 
     }
 }

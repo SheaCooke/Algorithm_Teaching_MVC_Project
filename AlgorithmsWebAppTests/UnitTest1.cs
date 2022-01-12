@@ -122,6 +122,63 @@ namespace AlgorithmsWebAppTests
             Assert.AreEqual(head.Next.Data, "third value");
         }
 
+        [TestMethod]
+        public void DoublyLinkedListNodesLinkedProperly()
+        {
+            DoublyLinkedNode first = new DoublyLinkedNode("first");
+            DoublyLinkedNode second = new DoublyLinkedNode("second");
+            DoublyLinkedNode third = new DoublyLinkedNode("third");
+
+            first.Next = second;
+            second.Previous = first;
+            second.Next = third;
+            third.Previous = second;
+
+            Assert.AreEqual(first.Next.Data, "second");
+            Assert.AreEqual(third.Previous.Data, "second");
+            Assert.AreEqual(first.Next.Next.Data, "third");
+            Assert.AreEqual(second.Previous.Data, "first");
+        }
+
+        [TestMethod]
+        public void DoublyLinkedListInsertionLinksNodes()
+        {
+            DoublyLinkedNode first = new DoublyLinkedNode("first");
+            DoublyLinkedNode second = new DoublyLinkedNode("second");
+            DoublyLinkedNode third = new DoublyLinkedNode("third");
+
+            first.Next = second;
+            second.Previous = first;
+            second.Next = third;
+            third.Previous = second;
+
+            AlgorithmsWebApp.Algorithms.DoublyLinkedListInsertNode(1, new DoublyLinkedNode("new val"), first);
+
+            Assert.AreEqual(first.Next.Data, "new val");
+            Assert.AreEqual(second.Previous.Data, "new val");
+            Assert.AreEqual(third.Previous.Previous.Data, "new val");
+
+        }
+
+        [TestMethod]
+        public void DoublyLinkedListRemovalLinksNodes()
+        {
+            DoublyLinkedNode first = new DoublyLinkedNode("first");
+            DoublyLinkedNode second = new DoublyLinkedNode("second");
+            DoublyLinkedNode third = new DoublyLinkedNode("third");
+
+            first.Next = second;
+            second.Previous = first;
+            second.Next = third;
+            third.Previous = second;
+
+            AlgorithmsWebApp.Algorithms.DoublyLinkedListRemoveNode(first, 1);
+
+            Assert.AreEqual("third", first.Next.Data);
+            Assert.AreEqual("first", third.Previous.Data);
+
+        }
+
 
         [TestCleanup]
         public void CleanUp()
