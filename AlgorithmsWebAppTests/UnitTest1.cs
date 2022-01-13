@@ -108,8 +108,8 @@ namespace AlgorithmsWebAppTests
             Node head = AlgorithmsWebApp.Algorithms.CreateLinkedList(nodes);
 
             Assert.AreEqual(head.Data, "first");
-            Assert.AreEqual(head.Next.Data, "second");
-            Assert.AreEqual(head.Next.Next.Data, "third");
+            Assert.AreEqual(head.Next?.Data, "second");
+            Assert.AreEqual(head.Next.Next?.Data, "third");
             Assert.AreEqual(head.Next.Next.Next, null);
 
 
@@ -119,7 +119,7 @@ namespace AlgorithmsWebAppTests
         public void RemoveNodeFromLinkedListRemovesCorrectNode()
         { 
             AlgorithmsWebApp.Algorithms.RemoveNodeFromLinkedList(head, 1);
-            Assert.AreEqual(head.Next.Data, "third value");
+            Assert.AreEqual(head.Next?.Data, "third value");
         }
 
         [TestMethod]

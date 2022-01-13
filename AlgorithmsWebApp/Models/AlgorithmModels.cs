@@ -15,7 +15,8 @@ namespace AlgorithmsWebApp.Models
         public List<SelectListItem> AlgorithmList = new List<SelectListItem>
         {
             new SelectListItem(AlgorithmSelection.BinarySearch.ToString(), ((int)AlgorithmSelection.BinarySearch).ToString()),
-            new SelectListItem(AlgorithmSelection.InsertingSinglyLinkedList.ToString(), ((int)AlgorithmSelection.InsertingSinglyLinkedList).ToString())
+            new SelectListItem(AlgorithmSelection.CreateSinglyLinkedList.ToString(), ((int)AlgorithmSelection.CreateSinglyLinkedList).ToString()),
+            new SelectListItem(AlgorithmSelection.InsertingNodeSinglyLinkedList.ToString(), ((int)AlgorithmSelection.InsertingNodeSinglyLinkedList).ToString())
 
         };
 

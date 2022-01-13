@@ -16,11 +16,24 @@
           <input type="text" id="collectionOfValues" asp-for="Collection"><br><br>
 
           <input type="submit" value="Run" />
+    </form>
+}
+
+else if (@Model.SelectedAlgorithm.Equals(AlgorithmSelection.CreateSinglyLinkedList)) //create a data structure, not run an algorithm 
+{
+    <form method="post" asp-action="GenerateResponse" asp-controller="UserInput">
+
+          <label for="valueToFind">Value To Find:</label>
+          <input type="text" id="valueToFind" asp-for="TargetValue"><br><br>
+          <label for="collectionOfValues">Collection Of Values (integers must be separated by a comma)</label>
+          <input type="text" id="collectionOfValues" asp-for="Collection"><br><br>
+
+          <input type="submit" value="Run" />
 
     </form>
 }
 
-else if (@Model.SelectedAlgorithm.Equals(AlgorithmSelection.InsertingSinglyLinkedList))
+else if (@Model.SelectedAlgorithm.Equals(AlgorithmSelection.InsertingNodeSinglyLinkedList))
 {
     <form method="post" asp-action="GenerateResponse" asp-controller="UserInput">
 

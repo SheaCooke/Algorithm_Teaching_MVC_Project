@@ -3,6 +3,7 @@
     public enum AlgorithmSelection
     {
         BinarySearch,
-        InsertingSinglyLinkedList
+        CreateSinglyLinkedList,
+        InsertingNodeSinglyLinkedList
     }
 }
